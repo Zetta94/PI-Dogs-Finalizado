@@ -1,7 +1,7 @@
 const {Router} = require("express");
 const dogRouter = Router()
 const {API_KEY} = process.env
-const { Dog,Temperaments } = require('../db')
+const { Dog,Temperaments,DogTemperament } = require('../db')
 const {getAllApi,getAllDb,getDogForNameAPI,getDogForNameDB} = require('../Controller/Controllers.js');
 const { UUID } = require("sequelize");
 
@@ -10,30 +10,12 @@ const { UUID } = require("sequelize");
 dogRouter.get('/:id', async (req,res)=>{
     try{
         const {id} = req.params
-        const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i; 
+        let getAllDog1 = await getAllApi()
+        let getAllDog2 = await getAllDb()
+        let response = getAllDog2.concat(getAllDog1)
+        response = response.filter(e=>e.id == id)
 
-        let race1 =  await fetch(`https://api.thedogapi.com/v1/breeds?${API_KEY}`)
-        .then(data => data.json())
-        .then(dogs => dogs.filter(dog => dog.id==Number(id)))
-        .catch((error)=>res.status(400).send(error.message))
-        let race ;
-
-        if (uuidRegex.test(id)) {
-            race =  await Dog.findAll({
-                where : {
-                    id: id
-                }
-            })
-        } 
-     
-
-         if(race){
-             res.status(200).json(race)
-         }else {
-            res.status(200).json(race1)
-         }
-
-
+        res.status(200).json(response)
     }catch(error){
         res.status(400).json({message : error.message})
     }
@@ -72,15 +54,21 @@ dogRouter.post("/", async (req, res) => {
             name, heightMax, heightMin, weightMax, weightMin, lifeSpanMax, lifeSpanMin, image
         })
 
-        for(let i = 0; i < temperament.length; i++){
-            const temp = await Temperaments.findOne({
-                where: {
-                    name: temperament[i]
-                }
-            })
-            await newDog.addTemperaments(temp)
+        const newT = temperament.split(", ")
 
-        }
+        for(let i = 0; i < newT.length; i++){
+            const temp = await Temperaments.findOrCreate({
+                where: {
+                    name: newT[i]
+                }
+        })
+
+        const dogTemperament = await DogTemperament.create({
+                dogId: newDog.id,
+                temperamentId: temp[0].id
+        })
+    
+    }
         res.status(200).json({message : "the dog was created"})
     } catch (err) {
         console.error(err)

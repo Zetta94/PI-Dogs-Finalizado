@@ -35,6 +35,8 @@ module.exports={
             const response = await Dog.findAll({
                 include: Temperaments
             })
+
+            
             let dogList = []
             dogList = await response.map(dog => {
                 return {
@@ -44,7 +46,7 @@ module.exports={
                     weightMax: dog.weightMax,
                     heightMin: dog.heightMin,
                     heightMax: dog.heigthMax,
-                    temperament: dog.temperaments,
+                    temperament: (dog.temperaments.map(e => e.name)).join(", "),
                     image: dog.image.url,
                     lifeSpanMin: dog.lifeSpanMin,
                     lifeSpanMax: dog.lifeSpanMax,
@@ -94,13 +96,17 @@ module.exports={
     getDogForNameDB : async (name1) => {
 
         try{
+            // const response = await Dog.findAll({
+            //     where: {
+            //       name: {
+            //         [Op.iLike]: `%${name1}%`
+            //       }
+            //     }
+            //   })
+
             const response = await Dog.findAll({
-                where: {
-                  name: {
-                    [Op.iLike]: `%${name1}%`
-                  }
-                }
-              })
+                include: Temperaments
+            })
 
             const dogsList = await response.filter(dog => { 
                 if(dog.name.toLowerCase().includes(name1.toLowerCase())){
@@ -117,7 +123,7 @@ module.exports={
                     weightMax: dog.weightMax,
                     heightMin: dog.heightMin,
                     heightMax: dog.heigthMax,
-                    temperament: dog.temperament,
+                    temperament: (dog.temperaments.map(e => e.name)).join(", "),
                     image: dog.image.url,
                     lifeSpanMin: dog.lifeSpanMin,
                     lifeSpanMax: dog.lifeSpanMax,
