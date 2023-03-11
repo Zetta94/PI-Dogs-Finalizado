@@ -87,20 +87,20 @@ const Home = () =>{
         <div>
 
             <div>
-                <span>Order by: </span>
-                <button name="asc" onClick={handleOnClick}>A - Z</button>
-                <button name="des" onClick={handleOnClick}>Z - A</button>
-                <button name="max" onClick={handleOnClick}>Weight Max</button>
-                <button name="min" onClick={handleOnClick}>Weight Min</button>
+                <span className={style.span1}>Order by: </span>
+                <button className={style.button1} name="asc" onClick={handleOnClick}>A - Z</button>
+                <button className={style.button1} name="des" onClick={handleOnClick}>Z - A</button>
+                <button className={style.button1} name="max" onClick={handleOnClick}>Weight Max</button>
+                <button className={style.button1} name="min" onClick={handleOnClick}>Weight Min</button>
             </div>
             <div>
-                <span>Filter by: </span>
-                <button name="all" onClick={handleOnClick}>ALL</button>
-                <button name="api" onClick={handleOnClick}>API</button>
-                <button name="db" onClick={handleOnClick}>DB</button>
+                <span className={style.span1}>Filter by: </span>
+                <button className={style.button1} name="all" onClick={handleOnClick}>ALL</button>
+                <button className={style.button1} name="api" onClick={handleOnClick}>API</button>
+                <button className={style.button1} name="db" onClick={handleOnClick}>DB</button>
             </div>
             <div>
-                <span>Temperament: </span>
+                <span className={style.span1}>Temperament: </span>
                 <select onChange={handleOnChange}>
                     {
                         temperaments.map((e,index) => 

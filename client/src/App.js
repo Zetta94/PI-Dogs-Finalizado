@@ -1,4 +1,4 @@
-import { Route,Routes } from 'react-router-dom';
+import { Route,Routes,useLocation } from 'react-router-dom';
 import './App.css';
 //?Components
 import LandingPage from './components/landingPage/LandingPage';
@@ -8,15 +8,16 @@ import Form from "./components/Form/Form";
 import Nav from "./components/Nav/Nav"
 
 function App() {
+  const location = useLocation()
   return (
     <div className="App"> 
-        <Nav/>
-        <Routes>
-          <Route  path="/" element={<LandingPage/>}/>
-          <Route  path="/home" element={<Home/>}/> 
-          <Route  path="/detail/:id" element={<Detail/>}/>
-          <Route  path="/form" element={<Form/>}/>
-        </Routes>
+      {location.pathname !== '/' && <Nav/>}
+      <Routes>
+        <Route path="/" element={<LandingPage/>}/>
+        <Route path="/home" element={<Home/>}/> 
+        <Route path="/detail/:id" element={<Detail/>}/>
+        <Route path="/form" element={<Form/>}/>
+      </Routes>
     </div>
   );
 }

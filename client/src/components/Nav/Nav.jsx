@@ -1,6 +1,6 @@
 import React,{ useState } from "react";
 import style from "./Nav.module.css"
-import {useSelector, useDispatch} from "react-redux";
+import { useDispatch} from "react-redux";
 import { Link } from 'react-router-dom';
 import {getDogForName} from "../../actions"; 
 
@@ -18,9 +18,9 @@ function Nav() {
   }
 
   return (
-    <div className={style.divAll}>
+    <div className={style.navbar}>
 
-      <div className={style.divTwo}>
+      <div >
         <div>
           <Link to="/">
             <img src="https://www.gifss.com/animales/perros/images/perro-animado-12.gif" width="100px" alt="img not found"/>
@@ -33,9 +33,9 @@ function Nav() {
         </div>
       </div>
       
-      <div className={style.menu}>
+      <div>
         <Link to="/home">HOME</Link>
-        <Link to="/form">Create</Link>
+        <Link to="/form">CREATE</Link>
       </div>
       
     </div>

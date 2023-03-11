@@ -8,3 +8,30 @@
 select option {
     font-size: 14px;
   }
+
+  .span1{
+    margin-right: 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 5px;
+  }
+
+  .button1{
+    padding : .5rem;
+    border-radius: 15px;
+    border: none;
+    transition: all .2s linear;
+    box-shadow: 0 0 10px black;
+    margin: 5px;
+  }
+  
+  .button1:hover{
+    cursor: pointer;
+    background-color: yellow;
+  }
+  
+  .button1:active{
+    background-color: green;
+  }
