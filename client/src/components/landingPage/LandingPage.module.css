@@ -1,0 +1,24 @@
+.div1{
+    background-image: url("https://fondosmil.com/fondo/37944.jpg");
+    height: 100vh;/*view port height : medidas relativas*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*Centro las cosas*/
+    display: grid;
+    place-content: center;
+
+}
+.div2{
+    text-decoration: none;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.link1{
+    text-decoration: none;
+    color: azure;
+    font-size: 24px;
+    
+}

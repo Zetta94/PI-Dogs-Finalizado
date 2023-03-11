@@ -1,0 +1,24 @@
+.pagination1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem 0;
+    width: 100%;
+    gap: 1rem;
+  }
+
+.button1{
+  padding : .5rem;
+  border-radius: 15px;
+  border: none;
+  transition: all .2s linear;
+  box-shadow: 0 0 10px black;
+}
+
+.button1:hover{
+  background-color: yellow;
+}
+
+.button1:active{
+  background-color: green;
+}

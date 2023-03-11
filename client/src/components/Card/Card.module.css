@@ -1,0 +1,16 @@
+.divCard{
+   width: 450px;
+   border : dashed red 1px;
+   border-radius: 25px;
+   padding: 2rem;
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+h2{
+    color:black;
+}
+.link1{
+    text-decoration: none;
+}

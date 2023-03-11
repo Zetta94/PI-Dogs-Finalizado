@@ -1,0 +1,15 @@
+.divAll{
+    display: flex;
+    border:solid red;
+    align-items: center;
+    justify-content: center;
+}
+.divTwo{
+    display: flex;
+    border:solid yellow;
+    align-items: center;
+    justify-content: center;
+}
+.menu{
+    border:solid green;
+}

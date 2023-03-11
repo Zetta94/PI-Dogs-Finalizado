@@ -45,9 +45,9 @@ module.exports={
                     weightMin: dog.weightMin,
                     weightMax: dog.weightMax,
                     heightMin: dog.heightMin,
-                    heightMax: dog.heigthMax,
+                    heightMax: dog.heightMax,
                     temperament: (dog.temperaments.map(e => e.name)).join(", "),
-                    image: dog.image.url,
+                    image: dog.image,
                     lifeSpanMin: dog.lifeSpanMin,
                     lifeSpanMax: dog.lifeSpanMax,
                     comesFrom: "DB"
@@ -81,7 +81,7 @@ module.exports={
                     heightMin: heightTemp[0],
                     heightMax: heightTemp[1],
                     temperament: dog.temperament,
-                    image: dog.image.url,
+                    image: dog.image,
                     lifeSpanMin: ageTemp[0],
                     lifeSpanMax: ageTemp[1],
                     comesFrom: "API"
@@ -96,13 +96,6 @@ module.exports={
     getDogForNameDB : async (name1) => {
 
         try{
-            // const response = await Dog.findAll({
-            //     where: {
-            //       name: {
-            //         [Op.iLike]: `%${name1}%`
-            //       }
-            //     }
-            //   })
 
             const response = await Dog.findAll({
                 include: Temperaments
@@ -122,7 +115,7 @@ module.exports={
                     weightMin: dog.weightMin,
                     weightMax: dog.weightMax,
                     heightMin: dog.heightMin,
-                    heightMax: dog.heigthMax,
+                    heightMax: dog.heightMax,
                     temperament: (dog.temperaments.map(e => e.name)).join(", "),
                     image: dog.image.url,
                     lifeSpanMin: dog.lifeSpanMin,

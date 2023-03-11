@@ -11,7 +11,7 @@ import {
     ORDER_DES,
     ORDER_WEIGHT_MIN,
     ORDER_WEIGHT_MAX
-} from "./actions";
+} from "../actions/actions";
 
 const initialState = {
     dogs : [],
@@ -20,13 +20,13 @@ const initialState = {
     dogsDescription : {},
 }
 
-export default rootReducer = (state = initialState,action) => {
+export default function rootReducer(state = initialState,action){
     let aux1 = []
     let aux2  = []
     switch(action.type){
 
         case GET_ALL_DOGS : 
-            aux1 = payload.action
+            aux1 = action.payload
             return {
                 ...state, 
                 dogs: action.payload,
@@ -39,26 +39,30 @@ export default rootReducer = (state = initialState,action) => {
                 temperaments : action.payload
             }
 
-        case GET_DOGS_FOR_NAME : 
-            aux2 = state.dogs.filter(e =>{ 
-                if(e.name.includes(action.payload)) return e
-            })
+        case GET_DOGS_FOR_NAME: 
+            aux2 = state.dogs.filter((e) => {
+                if (e.name.includes(action.payload)) {
+                    return e;
+                }
+                return null; 
+            });
             return {
-                ...state,
-                dogsFilter : aux2
-            }
+              ...state,
+              dogsFilter: aux2
+            };
 
         case GET_DESCRIPTION:
             return {
                 ...state,
-                dogsDescription : state.dogs.find(e => e.id === action.payload)
+                dogsDescription : action.payload[0]
             }
 
         case FILTER_TEMPERAMENT:
-            aux1 = state.dogs.filter(e => {
-                if(!e.temperaments) return undefined
-                return dog.temperaments.includes(action.payload)
+            aux1 = state.dogs.filter(dog => {
+                if(!dog.temperament) return undefined;
+                return dog.temperament.includes(action.payload)
             })
+            console.log(aux1)
             return{
                 ...state,
                 dogsFilter : aux1
@@ -66,6 +70,7 @@ export default rootReducer = (state = initialState,action) => {
 
         case FILTER_API :
             aux1 = state.dogs.filter(e => e.comesFrom === "API")
+            console.log(aux1)
             return{
                 ...state,
                 dogsFilter : aux1
@@ -73,6 +78,7 @@ export default rootReducer = (state = initialState,action) => {
         
         case FILTER_DB :
             aux1 = state.dogs.filter(e => e.comesFrom === "DB")
+            console.log(aux1)
             return{
                 ...state,
                 dogsFilter : aux1

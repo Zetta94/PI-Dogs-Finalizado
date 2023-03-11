@@ -1,5 +1,4 @@
 import axios from "axios";
-import dotenv from "dotenv";
 import {
     GET_ALL_DOGS,
     GET_ALL_TEMPERAMENT,
@@ -14,22 +13,21 @@ import {
     ORDER_WEIGHT_MIN,
     ORDER_WEIGHT_MAX
 } from "./actions";
-dotenv.config();
+import img from "../assets/AKITACORRIENDO.gif"
 
 //! Gets
 
-export const getDogs = () => {
-    axios.get("http://localhost:3001/dogs/")
+export const getDogs = () => async (dispatch) => {
+    await axios.get("http://localhost:3001/dogs/")
     .then((response) => {
         dispatch({type:GET_ALL_DOGS, payload: response.data})
     })
 }
 
-export const getTemperaments = () =>{
-    axios.get("http://localhost:3001/temperaments/")
+export const getTemperaments =  () =>async(dispatch) => {
+    await axios.get("http://localhost:3001/temperament/")
     .then((response)=>{
-        let res = response.data.map(e => e.name)
-        dispatch({tipe:GET_ALL_TEMPERAMENT, payload : res})
+        dispatch({type:GET_ALL_TEMPERAMENT, payload : response.data})
     })
 }
 
@@ -40,13 +38,19 @@ export const getDogForName = (name) =>{
     }
 }
 
-export const getDescription = (id) =>{
-    return{
-        type : GET_DESCRIPTION,
-        payload : id
-    }
+export const getDescription = (id) => async (dispatch) => {
+    await axios.get(`http://localhost:3001/dogs/${id}`)
+    .then((response) => {
+        dispatch({type:GET_DESCRIPTION, payload: response.data})
+    })
 }
 
+export const createDog = (dog) =>{
+    if(dog.image === ""){
+        dog.image = img
+    }
+    return axios.post("http://localhost:3001/dogs/",dog)
+}
 //! Filters
 
 export const filterTemperament = (temperament) =>{

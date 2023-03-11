@@ -10,6 +10,7 @@ export const ORDER_ASC = "ORDER_ASC";
 export const ORDER_DES = "ORDER_DES";
 export const ORDER_WEIGHT_MIN = "ORDER_WEIGHT_MIN";
 export const ORDER_WEIGHT_MAX = "ORDER_WEIGHT_MAX";
+export const CREATE_DOG = "CREATE_DOG";
 
 // Ver todos (8 maximo por tanda) 
 // filtrar por temperamentos
