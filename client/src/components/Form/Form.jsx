@@ -26,6 +26,7 @@ const Form = () => {
         e.preventDefault()
         try {
           const response = await createDog(formData)
+          console.log(response)
           alert("Dog was created")
         } catch (err) {
           console.error(err)

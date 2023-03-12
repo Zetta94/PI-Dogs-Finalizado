@@ -1,32 +1,25 @@
 .div1{
-    background-image: url("https://fondosmil.com/fondo/37944.jpg");
-    height: 100vh;/*view port height : medidas relativas*/
+    background-image: url("https://img.freepik.com/foto-gratis/retrato-grupo-adorables-cachorros_53876-64778.jpg?w=1800&t=st=1678651150~exp=1678651750~hmac=639f3866596ea31a43db2fe21f26bbe9184c9af69895f24c50ee2605ffab2e42");
     background-repeat: no-repeat;
     background-size: cover;
-    display: grid;
-    place-content: center;
-    padding: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    height: 100vh;/*view port height : medidas relativas*/   
 }
 
 .title{
     text-align: left; 
-    font-family: Arial; 
-    font-size: 30px; 
-    COLOR: #1278BF; 
-    text-shadow: 0px 0px 9px #508AD3;
-}
-.div2{
-    text-decoration: none;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
+    font-family: cursive Black; 
+    font-weight: bold; font-size: 70px; 
+    background: #202020; 
+    -webkit-background-clip: text; 
+    -moz-background-clip: text; 
+    background-clip: text; 
+    color: transparent; 
+    text-shadow: 0px 3px 3px rgba(255,255,255,0.4),0px -1px 1px rgba(0,0,0,0.3);
 }
 
-.link1{
-    background-color: #4CAF50;
+ .link1{
     border: none;
     color: white;
     padding: 10px 20px;
@@ -35,7 +28,35 @@
     display: inline-block;
     font-size: 16px;
     border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-    cursor: pointer;  
+} 
+
+.box1{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
 }
+
+.button1 {
+    background: #7aebe4;
+    font-family: inherit;
+    padding: 0.6em 1.3em;
+    font-weight: 900;
+    font-size: 18px;
+    border: 3px solid black;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+    cursor: pointer;
+  }
+  
+  .button1:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+    background-color: white;
+  }
+  
+  .button1:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+  }

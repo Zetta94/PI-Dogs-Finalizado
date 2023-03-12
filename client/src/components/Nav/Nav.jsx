@@ -22,7 +22,7 @@ function Nav() {
       <div className={style.divH}>
         <div>
           <Link to="/">
-            <img src="https://www.gifss.com/animales/perros/images/perro-animado-12.gif" width="100px" alt="img not found"/>
+            <img src="https://usagif.com/wp-content/uploads/2022/4hv9xm/red-panda-44.gif" width="175px" alt="img not found"/>
           </Link>
         </div>
 

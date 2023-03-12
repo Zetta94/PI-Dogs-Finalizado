@@ -1,6 +1,5 @@
 import {Link} from "react-router-dom";
 import style from "../landingPage/LandingPage.module.css";
-import img from "../../assets/PUG CORRIENDO.gif";
 import sound from "../../assets/ladrido.mp3";
 
 const LandingPage = () =>{
@@ -14,12 +13,21 @@ const LandingPage = () =>{
     }
     return(
         <div className={style.div1}>
-            <h1 className={style.title}>Hi Human!</h1>
-            <h1 className={style.title}>This is my page</h1>
-            <div className={style.div2}>
-                <img src={img} alt="img not found" />
-                <Link to="/home" className={style.link1} onClick={playSound} >HOME</Link>
-            </div>           
+            <div>
+                <h1 className={style.title}>My heart</h1>
+                <h1 className={style.title}>is full</h1>
+                <h1 className={style.title}>of footprints!</h1>
+            </div>
+            <div>
+                <h1 className={style.title}>Join us!</h1>
+                <div className={style.box1}>
+                    <img src="https://media.tenor.com/-N9ApkrwieUAAAAi/cute-dogs.gif" alt="img not found" width="250px"/>
+                    <Link to="/home"  onClick={playSound} >
+                            <button className={style.button1}>Home</button>
+                    </Link>
+                </div>
+            </div>
+                       
         </div>
     )
 }

@@ -1,37 +1,62 @@
-.content{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 1rem;
-}
-select option {
-    font-size: 14px;
+  .content{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 6rem;
   }
+
+  .content2{
+    display: flex;
+    justify-content: center;
+    gap:8rem;
+    margin: 1rem;
+  }
+
+  .selectBox{
+    background: #7aebe4;
+    font-family: inherit;
+    padding: 0.2em 0.4em;
+    font-weight: 700;
+    font-size: 15px;
+    border: 2px solid black;
+    border-radius: 0.8em;
+    box-shadow: 0.1em 0.1em;
+    cursor: pointer;
+  }
+
 
   .span1{
-    margin-right: 10px;
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    font-size: 18px;
-    margin: 5px;
+    text-align: left; 
+    font-family: cursive Black; 
+    font-weight: bold; font-size: 30px; 
+    background: #202020; 
+    -webkit-background-clip: text; 
+    -moz-background-clip: text; 
+    background-clip: text; 
+    color: transparent; 
+    text-shadow: 0px 3px 3px rgba(211, 209, 209, 0.4),0px -1px 1px rgba(0,0,0,0.3);
   }
 
-  .button1{
-    padding : .5rem;
-    border-radius: 15px;
-    border: none;
-    transition: all .2s linear;
-    box-shadow: 0 0 10px black;
-    margin: 5px;
-  }
-  
-  .button1:hover{
+  .button1 {
+    background: #7aebe4;
+    font-family: inherit;
+    padding: 0.2em 0.4em;
+    font-weight: 700;
+    font-size: 15px;
+    border: 2px solid black;
+    border-radius: 0.8em;
+    box-shadow: 0.1em 0.1em;
     cursor: pointer;
-    background-color: yellow;
   }
   
-  .button1:active{
-    background-color: green;
+  .button1:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+    background-color: white;
+  }
+  
+  .button1:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
   }

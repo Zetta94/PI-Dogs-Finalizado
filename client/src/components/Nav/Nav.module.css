@@ -2,7 +2,6 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #fff;
     padding: 10px;
   }
 
@@ -35,6 +34,7 @@
   .navbar button:hover{
     background-color: yellow;
     cursor: pointer;
+    
   }
   
   .navbar button:active{
