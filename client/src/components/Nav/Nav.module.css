@@ -1,12 +1,18 @@
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background-color: #fff;
     padding: 10px;
-    border-bottom: 1px solid #ccc;
   }
-  
+
+  .divH{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
   .navbar img {
     height: 100%;
   }
@@ -46,19 +52,3 @@
   .navbar a:hover {
     color: #ccc;
   }
-
-/* .divAll{
-    display: flex;
-    border:solid red;
-    align-items: center;
-    justify-content: center;
-}
-.divTwo{
-    display: flex;
-    border:solid yellow;
-    align-items: center;
-    justify-content: center;
-}
-.menu{
-    border:solid green;
-} */

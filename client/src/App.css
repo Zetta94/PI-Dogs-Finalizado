@@ -1,7 +1,9 @@
-/* .App {
-  text-align: center;
-}
 
+.App {
+  background-image: url('https://fondosmil.com/fondo/26163.jpg');
+  background-size: cover;
+}
+/*
 .App-logo {
   height: 40vmin;
   pointer-events: none;

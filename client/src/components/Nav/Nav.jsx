@@ -19,8 +19,7 @@ function Nav() {
 
   return (
     <div className={style.navbar}>
-
-      <div >
+      <div className={style.divH}>
         <div>
           <Link to="/">
             <img src="https://www.gifss.com/animales/perros/images/perro-animado-12.gif" width="100px" alt="img not found"/>
@@ -28,16 +27,15 @@ function Nav() {
         </div>
 
         <div>
-            <input type="text" value={dogN} onChange={handleChange}/>
-            <button onClick={onChange}>Buscar</button>
+          <Link to="/home">HOME</Link>
+          <Link to="/form">CREATE</Link>
         </div>
       </div>
-      
+
       <div>
-        <Link to="/home">HOME</Link>
-        <Link to="/form">CREATE</Link>
-      </div>
-      
+        <input type="text" value={dogN} onChange={handleChange}/>
+        <button onClick={onChange}>Buscar</button>
+      </div>  
     </div>
   );
 }
