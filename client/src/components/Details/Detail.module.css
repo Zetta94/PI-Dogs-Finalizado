@@ -3,29 +3,87 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
+    min-height: 100vh;
   }
   
+  .container h1{
+      text-align: center; 
+      font-family: cursive Black; 
+      font-weight: bold; font-size: 70px; 
+      background: #000000; 
+      -webkit-background-clip: text; 
+      -moz-background-clip: text; 
+      background-clip: text; 
+      color: transparent; 
+      text-shadow: 0px 3px 3px rgba(67, 66, 66, 0.4),0px -1px 1px rgba(0,0,0,0.3);   
+      font-size: 36px;
+      }
+
   .container img {
-    max-width: 500px;
+    max-width: 550px;
     margin: 20px 0;
+    background: #7aebe4;
+    font-family: inherit;
+    font-weight: 900;
+    font-size: 18px;
+    border: 5px solid black;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em 0.2em rgb(109, 109, 109);
   }
   
-  .container .box1, .box2 {
+  .container p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 0px 3px 3px rgba(221, 218, 218, 0.4),0px -1px 1px rgba(0,0,0,0.3);   
+    font-size: 22px;
+  }
+
+  .box{
+    background: #7aebe4;
+    font-family: inherit;
+    padding: 0.9em 1.3em;
+    font-weight: 900;
+    font-size: 20px;
+    border: 5px solid black;
+    border-radius: 0.4em;
+    box-shadow: 0.2em 0.25em 0.2em rgb(109, 109, 109);
     display: flex;
-    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .box1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .box2 {
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    margin: 10px 0;
-    width: 100%;
+  }
+
+  .button1 {
+    background: #7aebe4;
+    font-family: inherit;
+    padding: 0.6em 1.3em;
+    font-weight: 900;
+    font-size: 18px;
+    border: 3px solid black;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+    cursor: pointer;
   }
   
-  .container h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
+  .button1:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+    background-color: white;
   }
   
-  .container h2 {
-    font-size: 24px;
-    margin: 0 10px;
+  .button1:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
   }

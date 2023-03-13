@@ -32,9 +32,9 @@ function Nav() {
         </div>
       </div>
 
-      <div>
+      <div className={style.box1}>
         <input type="text" value={dogN} onChange={handleChange}/>
-        <button onClick={onChange}>Buscar</button>
+        <button onClick={onChange}>🔎🐶</button>
       </div>  
     </div>
   );

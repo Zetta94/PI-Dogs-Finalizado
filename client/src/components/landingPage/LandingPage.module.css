@@ -2,6 +2,7 @@
     background-image: url("https://img.freepik.com/foto-gratis/retrato-grupo-adorables-cachorros_53876-64778.jpg?w=1800&t=st=1678651150~exp=1678651750~hmac=639f3866596ea31a43db2fe21f26bbe9184c9af69895f24c50ee2605ffab2e42");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: space-around;
     height: 100vh;/*view port height : medidas relativas*/   

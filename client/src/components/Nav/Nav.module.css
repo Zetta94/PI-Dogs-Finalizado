@@ -17,28 +17,50 @@
   }
   
   .navbar input {
-    padding: 5px;
-    border: 1px solid #ccc;
+    font-family: monospace;
+    max-width: 190px;
+    outline: none;
+    border: 1px solid #dadada;
+    padding: 10px;
     border-radius: 5px;
-    margin-right: 10px;
+    background-color: #f3f7fe;
+    transition: .3s;
+    color: #3b82f6;
+    margin: 1rem;
   }
+
+  .navbar input::placeholder{
+    color: #3b82f6;
+  }
+
+  .navbar input:focus{
+    border: 1px solid #3b82f6;
+    box-shadow: 0 0 0 5px #3b83f65f
+  }
+
   
   .navbar button {
-    padding : .5rem;
-    border-radius: 15px;
-    border: none;
-    transition: all .2s linear;
-    box-shadow: 0 0 10px black;
+    background: #7aebe4;
+    font-family: inherit;
+    padding: 0.2em 0.4em;
+    font-weight: 700;
+    font-size: 15px;
+    border: 2px solid black;
+    border-radius: 0.8em;
+    box-shadow: 0.1em 0.1em;
+    cursor: pointer;
   }
 
   .navbar button:hover{
-    background-color: yellow;
-    cursor: pointer;
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+    background-color: white;
     
   }
   
   .navbar button:active{
-    background-color: green;
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
   }
   
   .navbar a {

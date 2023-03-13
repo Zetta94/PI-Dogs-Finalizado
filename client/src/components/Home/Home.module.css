@@ -4,6 +4,7 @@
       justify-content: space-around;
       flex-wrap: wrap;
       padding: 6rem;
+      min-height: 100vh;
   }
 
   .content2{
