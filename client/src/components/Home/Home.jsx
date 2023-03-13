@@ -87,20 +87,20 @@ const Home = () =>{
         <div >
             <div className={style.content2}>
                 <div>
-                    <span className={style.span1}>Order by: </span>
+                    <span className={style.span1}>ORDER </span>
                     <button className={style.button1} name="asc" onClick={handleOnClick}>A - Z</button>
                     <button className={style.button1} name="des" onClick={handleOnClick}>Z - A</button>
                     <button className={style.button1} name="max" onClick={handleOnClick}>Weight Max</button>
                     <button className={style.button1} name="min" onClick={handleOnClick}>Weight Min</button>
                 </div>
                 <div>
-                    <span className={style.span1}>Filter by: </span>
+                    <span className={style.span1}>FILTER</span>
                     <button className={style.button1} name="all" onClick={handleOnClick}>ALL</button>
                     <button className={style.button1} name="api" onClick={handleOnClick}>API</button>
                     <button className={style.button1} name="db" onClick={handleOnClick}>DB</button>
                 </div>
                 <div>
-                    <span className={style.span1}>Temperament: </span>
+                    <span className={style.span1}>TEMPERAMENT </span>
                     <select onChange={handleOnChange} className={style.selectBox}>
                         {
                             temperaments.map((e,index) => 

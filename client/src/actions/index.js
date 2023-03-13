@@ -13,7 +13,7 @@ import {
     ORDER_WEIGHT_MIN,
     ORDER_WEIGHT_MAX
 } from "./actions";
-import img from "../assets/AKITACORRIENDO.gif"
+import img from "../assets/pugG.gif"
 
 //! Gets
 

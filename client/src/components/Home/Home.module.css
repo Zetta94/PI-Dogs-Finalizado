@@ -3,15 +3,15 @@
       align-items: center;
       justify-content: space-around;
       flex-wrap: wrap;
-      padding: 6rem;
-      min-height: 100vh;
+      padding: 1rem;
+      min-height: 90vh;
   }
 
   .content2{
     display: flex;
     justify-content: center;
-    gap:8rem;
-    margin: 1rem;
+    gap:9rem;
+    margin: .5rem;
   }
 
   .selectBox{
@@ -31,12 +31,13 @@
     text-align: left; 
     font-family: cursive Black; 
     font-weight: bold; font-size: 30px; 
-    background: #202020; 
+    background: #000000; 
     -webkit-background-clip: text; 
     -moz-background-clip: text; 
     background-clip: text; 
     color: transparent; 
-    text-shadow: 0px 3px 3px rgba(211, 209, 209, 0.4),0px -1px 1px rgba(0,0,0,0.3);
+    text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4),0px -1px 1px rgba(0, 0, 0, 0.3);
+    border: 5px solid;
   }
 
   .button1 {

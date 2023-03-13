@@ -10,7 +10,7 @@ const Card = ({id,name,image,weightMax,weightMin,heightMax,heightMin,lifeSpanMin
             </div>
             <Link to={`/detail/${id}`}>
                 <div>            
-                    <img src={image} alt={name} width="300px"/> 
+                    <img src={image} alt={name}/> 
                 </div>
             </Link>
             <p><span>Temperament:</span> <span className={style.temperament}>{temperament}</span></p>
