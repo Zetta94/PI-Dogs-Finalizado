@@ -23,7 +23,7 @@ const Home = () =>{
     //Crear un estado para mantener la página actual y la cantidad de elementos por página.
     const [currentPage, setCurrentPage] = useState(1)
     const [elementsPerPage] = useState(8)
-
+ 
     //Crear un selector de Redux para obtener los elementos a mostrar en la página actual.
     const indexOfLastElement = currentPage * elementsPerPage
     const indexOfFirstElement = indexOfLastElement - elementsPerPage

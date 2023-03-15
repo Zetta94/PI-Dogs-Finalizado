@@ -13,7 +13,9 @@ router.get('/',async (req,res)=>{
         return aux;
     });
 
+    //Elimino los valores nulos
     const realValues = temperamentsList.flat().filter(Boolean);
+    //Creo un arreglo de valores unicos
     const valoresUnicos = new Set(realValues); 
     const finalResponse = [...valoresUnicos]; 
 
