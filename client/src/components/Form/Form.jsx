@@ -2,16 +2,29 @@ import React, {useState} from "react";
 import style from "../Form/Form.module.css"
 import { createDog } from "../../actions";
 import { Link } from "react-router-dom";
+import validation from "./validation";
 
 const Form = () => {
     const [formData, setFormData] = useState({
       name: '',
       heightMin: '',
       heightMax: '',
-      weightMin: '',
       weightMax: '',
-      lifeSpanMin: '',
+      weightMin: '',
       lifeSpanMax: '',
+      lifeSpanMin: '',
+      image: '',
+      temperament: '',
+    })
+
+    const [error, setError] = useState({
+      name: '',
+      heightMin: '',
+      heightMax: '',
+      weightMax: '',
+      weightMin: '',
+      lifeSpanMax: '',
+      lifeSpanMin: '',
       image: '',
       temperament: '',
     })
@@ -20,8 +33,12 @@ const Form = () => {
       setFormData({ 
         ...formData, 
         [e.target.name]: e.target.value 
-    })}
-    
+    })
+    setError(validation({
+      ...formData,
+      [e.target.name]: e.target.value
+    }))
+    }
     
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -49,6 +66,7 @@ const Form = () => {
           <div>
             <label htmlFor="name"><h1>Name</h1></label>
             <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} />
+            {error.name && <span>{error.name}</span>}
           </div>
 
           <div>
@@ -60,6 +78,7 @@ const Form = () => {
               value={formData.heightMin}
               onChange={handleChange}
             />
+            {error.heightMin && <span>{error.heightMin}</span>}
           </div>
 
           <div>
@@ -71,6 +90,7 @@ const Form = () => {
               value={formData.heightMax}
               onChange={handleChange}
             />
+            {error.heightMax && <span>{error.heightMax}</span>}
           </div>
 
           <div>
@@ -82,6 +102,7 @@ const Form = () => {
               value={formData.weightMin}
               onChange={handleChange}
             />
+            {error.weightMin && <span>{error.weightMin}</span>}
           </div>
 
           <div>
@@ -93,6 +114,7 @@ const Form = () => {
               value={formData.weightMax}
               onChange={handleChange}
             />
+            {error.weightMax && <span>{error.weightMax}</span>}
           </div>
 
           <div>
@@ -104,6 +126,7 @@ const Form = () => {
               value={formData.lifeSpanMin}
               onChange={handleChange}
             />
+            {error.lifeSpanMin && <span>{error.lifeSpanMin}</span>}
           </div>
 
           <div>
@@ -115,6 +138,7 @@ const Form = () => {
               value={formData.lifeSpanMax}
               onChange={handleChange}
             />
+            {error.lifeSpanMax && <span>{error.lifeSpanMax}</span>}
           </div>
 
           <div>
@@ -132,7 +156,15 @@ const Form = () => {
               onChange={handleChange}
             />
           </div>
-          <button type="submit" className={style.button1}>Submit</button>
+          {
+              formData.name !== '' 
+              && formData.heightMin !== ''
+              && formData.heightMax !== '' 
+              && formData.weightMin !== '' 
+              && formData.weightMax !== '' 
+              ? <button className={style.button1} type='submit' onClick={(e) => handleSubmit(e)}>Submit</button> 
+              :<button disabled className={style.button1}>Submit</button> 
+            }
         </form>
       </div>
     );
