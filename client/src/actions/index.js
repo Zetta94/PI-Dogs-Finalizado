@@ -18,14 +18,14 @@ import img from "../assets/pugG.gif"
 //! Gets
 
 export const getDogs = () => async (dispatch) => {
-    await axios.get("http://localhost:3001/dogs/")
+    await axios.get("https://dogs-15jw.onrender.com/dogs/")
     .then((response) => {
         dispatch({type:GET_ALL_DOGS, payload: response.data})
     })
 }
 
 export const getTemperaments =  () =>async(dispatch) => {
-    await axios.get("http://localhost:3001/temperament/")
+    await axios.get("https://dogs-15jw.onrender.com/temperament/")
     .then((response)=>{
         dispatch({type:GET_ALL_TEMPERAMENT, payload : response.data})
     })
@@ -39,7 +39,7 @@ export const getDogForName = (name) =>{
 }
 
 export const getDescription = (id) => async (dispatch) => {
-    await axios.get(`http://localhost:3001/dogs/${id}`)
+    await axios.get(`https://dogs-15jw.onrender.com/dogs/${id}`)
     .then((response) => {
         dispatch({type:GET_DESCRIPTION, payload: response.data})
     })
@@ -49,7 +49,7 @@ export const createDog = (dog) =>{
     if(dog.image === ""){
         dog.image = img
     }
-    return axios.post("http://localhost:3001/dogs/",dog)
+    return axios.post("https://dogs-15jw.onrender.com/dogs/",dog)
 }
 //! Filters
 
