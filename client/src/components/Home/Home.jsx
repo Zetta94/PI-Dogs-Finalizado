@@ -133,6 +133,7 @@ const Home = () =>{
                 lifeSpanMax ={dog.lifeSpanMax}
                 comesFrom = {dog.comesFrom}
                 temperament ={dog.temperament}
+                country ={dog.country}
                 />
             ))}
             </div>

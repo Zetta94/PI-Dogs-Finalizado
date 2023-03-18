@@ -37,6 +37,7 @@ const Detail = () => {
                     <h1>Maximum height <p>{dog.heightMax} cm</p></h1>
                     <h1>Minimum height <p>{dog.heightMin} cm</p></h1>
                     <h1>Life span <p>{dog.lifeSpanMin} to {dog.lifeSpanMax} years old</p></h1>
+                    <h1>Country {dog.country}</h1>
                 </div>
             </div>
         </div>

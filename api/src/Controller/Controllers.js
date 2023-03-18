@@ -35,8 +35,9 @@ module.exports={
             const response = await Dog.findAll({
                 include: Temperaments
             })
-
-            
+            console.log("flag1")
+            console.log(response)
+            console.log("flag1")
             let dogList = []
             dogList = await response.map(dog => {
                 return {
@@ -50,9 +51,13 @@ module.exports={
                     image: dog.image,
                     lifeSpanMin: dog.lifeSpanMin,
                     lifeSpanMax: dog.lifeSpanMax,
-                    comesFrom: "DB"
+                    comesFrom: "DB",
+                    country: dog.country
                 }
             })
+            console.log("flag1")
+            console.log(dogList)
+            console.log("flag1")
             return dogList
         }catch(error){
             return error

@@ -41,6 +41,11 @@ module.exports = (sequelize) => {
     lifeSpanMax:{
       type: DataTypes.STRING,
       allowNull: false
+    },
+    country:{
+      type:DataTypes.STRING,
+      allowNull :true,
+      defaultValue : "Argentina"
     }
   });
 };

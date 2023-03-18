@@ -1,7 +1,7 @@
 import style from "./Card.module.css"
 import { Link } from "react-router-dom";
 
-const Card = ({id,name,image,weightMax,weightMin,heightMax,heightMin,lifeSpanMin,lifeSpanMax,temperament}) =>{
+const Card = ({id,name,image,weightMax,weightMin,heightMax,heightMin,lifeSpanMin,lifeSpanMax,temperament,country}) =>{
     return(
         <div className={style.card}>
             
@@ -15,7 +15,6 @@ const Card = ({id,name,image,weightMax,weightMin,heightMax,heightMin,lifeSpanMin
             </Link>
             <p><span>Temperament:</span> <span className={style.temperament}>{temperament}</span></p>
             <p><span>Weight:</span> {weightMin} - {weightMax} kg</p>
-            
         </div>
     )
 }
